@@ -29,6 +29,20 @@ let playRound = function(playerSelection, computerSelection){
     }
 
     divResult.innerHTML += "<p>Player: " + playerScore + " Computer: " + computerScore + "</p>";
+
+    if( playerScore == 5 || computerScore == 5 )
+    {
+        if (playerScore == 5 )
+            divResult.innerHTML = "<p>You win!</p>";
+        else
+            divResult.innerHTML = "<p>Computer wins!</p>";
+        
+        playerScore = 0;
+        computerScore = 0;       
+    }
+   
+    
+    
     return;
 }
 
