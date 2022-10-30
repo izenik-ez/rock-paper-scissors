@@ -23,14 +23,15 @@ let playRound = function(playerSelection, computerSelection){
     }    
 }
 
-let game = function (rounds){
+let game = function (){
     let playerSelection;
     let computerSelection;
-    for(let i = 0 ; i < rounds ; i++){
-        playerSelection = prompt("Enter your choice: ");
-        computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
-    }
-}
 
-game(5);
+    playerSelection = prompt("Enter your choice: ");
+    computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));    
+}
+buttons = document.querySelectorAll('button');
+console.log(buttons);
+
+//game();
