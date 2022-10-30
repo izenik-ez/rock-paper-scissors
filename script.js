@@ -7,21 +7,29 @@ let getComputerChoice = function(){
 }
 
 
+let playerScore = 0,
+    computerScore = 0;
+
 let playRound = function(playerSelection, computerSelection){
     let player = playerSelection.toLowerCase();
     let computer = computerSelection.toLowerCase();
-
-
-    if (player == computer)        
-        return "Tie";
-        
-    if ((player == "paper") && (computer == "rock") ||
-        (player == "rock")  && (computer == "scissors") ||
-        (player == "scissors" && (computer == "paper"))){
-        return "You win! " + player + " beats " + computer;
+    let divResult = document.querySelector('div');
+    
+    
+    if (player == computer){      
+        divResult.innerText = "Tie";
+    } else if ((player == "paper") && (computer == "rock") ||
+               (player == "rock")  && (computer == "scissors") ||
+               (player == "scissors" && (computer == "paper"))){
+        divResult.innerText = "You win! " + player + " beats " + computer;
+        ++playerScore;
     } else{
-        return "You Lose! " + computer + " beats " + player;
-    }    
+        divResult.innerText = "You Lose! " + computer + " beats " + player;
+        ++computerScore;
+    }
+
+    divResult.innerHTML += "<p>Player: " + playerScore + " Computer: " + computerScore + "</p>";
+    return;
 }
 
 let game = function (){
